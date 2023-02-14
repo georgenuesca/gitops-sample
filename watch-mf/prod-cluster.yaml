@@ -11,7 +11,7 @@ spec:
   source:
     path: cluster-config
     repoURL: https://github.com/georgenuesca/gitops-sample.git
-    targetRevision: develop
+    targetRevision: release
   syncPolicy: 
     automated:
       prune: true
