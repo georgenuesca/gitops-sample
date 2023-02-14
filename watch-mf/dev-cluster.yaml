@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc 
   project: default 
   source:
-    path: apps-helloworld
+    path: cluster-config
     repoURL: https://github.com/georgenuesca/gitops-sample.git
-    targetRevision: master
+    targetRevision: develop
   syncPolicy: 
     automated:
       prune: true

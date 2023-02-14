@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps
+  namespace: argocd
+spec:
+  destination:
+    namespace: bgd
+    server: https://kubernetes.default.svc 
+  project: default 
+  source:
+    path: cluster-config
+    repoURL: https://github.com/georgenuesca/gitops-sample.git
+    targetRevision: develop
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
