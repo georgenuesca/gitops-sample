@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: apps
+  name: hello-world-app2
   namespace: argocd
 spec:
   destination:
     namespace: bgd
     server: https://kubernetes.default.svc 
   project: default 
-  source:
-    path: cluster-config
-    repoURL: https://github.com/georgenuesca/gitops-sample.git
-    targetRevision: release
+  source: 
+    path: helm
+    repoURL: https://github.com/georgenuesca/hello-world.git
+    targetRevision: develop
   syncPolicy: 
     automated:
       prune: true
